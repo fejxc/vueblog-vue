@@ -1,12 +1,14 @@
 <template>
     <div>
-        登陆成功
+        <Header></Header>
     </div>
 </template>
 
 <script>
+    import Header from "../components/Header";
     export default {
-        name: "Blogs"
+        name: "Blogs",
+        components: {Header}
     }
 </script>
 
