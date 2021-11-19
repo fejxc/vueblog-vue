@@ -18,7 +18,7 @@ export default new Vuex.Store({
     SET_USERINFO: (state,userInfo) => {
       state.userInfo = userInfo;
       //保存在本地
-      localStorage.setItem("userInfo",JSON.stringify(userInfo));
+      localStorage.setItem("userInfo",JSON                                                                                                                                                                                                                                                                                                                                                                                         .stringify(userInfo));
     },
     //删除
     REMOVE_INFO: (state) => {

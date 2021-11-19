@@ -1,3 +1,5 @@
+
+
 <template>
     <div class="m-content">
         <h3>欢迎来到fejxc的博客</h3>
@@ -27,7 +29,7 @@
         data() {
             return {
                 user: {
-                    username: 'fejxc',
+                    username: '先登陆',
                     avatar: 'https://gitee.com/fejxc/upic-file/raw/master/Users/sunyun/blog_pic /gbfQ2G.png'
                 },
                 hasLogin: false
@@ -50,11 +52,12 @@
         },
         created() {
             // this.hasLogin = true;
-            if(this.$store.getters.getUser.username) {
-                this.user.username = this.$store.getters.getUser.username;
-                this.user.avatar = this.$store.getters.getUser.avatar;
-                this.hasLogin = true;
-            }
+            // console.log(this.$store.getters.getUser.username);
+            // if(!this.$store.getters.getUser.username) {
+            //     this.user.username = this.$store.getters.getUser.username;
+            //     this.user.avatar = this.$store.getters.getUser.avatar;
+            //     this.hasLogin = true;
+            // }
         }
     }
 </script>
