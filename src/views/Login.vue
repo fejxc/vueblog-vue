@@ -53,7 +53,8 @@
                         this.$axios.post('/login',this.ruleForm)
                             .then(res => {
                                 const jwt = res.headers['authorization'];
-                                const userInfo = res.data;
+                                //data.data 不然拿不到数据
+                                const userInfo = res.data.data;
                                 console.log(userInfo);
                                 console.log(jwt);
                                 //把数据共享出去
@@ -75,6 +76,9 @@
             resetForm(formName) {
                 this.$refs[formName].resetFields();
             }
+        },
+        created() {
+            console.log(this.$store.getters.getUser);
         }
     }
 </script>
