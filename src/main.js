@@ -6,9 +6,14 @@ import Element from 'element-ui'
 import "element-ui/lib/theme-chalk/index.css"
 import axios from 'axios'
 import "./axios"
+import mavonEditor from 'mavon-editor'
+import 'mavon-editor/dist/css/index.css'
+import './permission.js' // 路由拦截
+
 
 //全局的使用
 Vue.use(Element)
+Vue.use(mavonEditor)
 
 Vue.prototype.$axios = axios
 

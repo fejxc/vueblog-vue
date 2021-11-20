@@ -17,7 +17,7 @@
             <el-divider direction="vertical"></el-divider>
             <span v-show="!hasLogin"><el-link type="primary" href="/login">登陆</el-link></span>
             <el-divider direction="vertical"></el-divider>
-            <span><el-link type="danger" @click="logout">退出</el-link></span>
+            <span v-show="hasLogin"><el-link type="danger" @click="logout">退出</el-link></span>
         </div>
 
     </div>
@@ -42,8 +42,7 @@
                     headers: {
                         "Authorization" : localStorage.getItem("token")
                     }
-                }).then(res =>{
-
+                }).then(res => {
                     _this.$store.commit("REMOVE_INFO");
                     _this.$router.push("/login");
                 })
@@ -51,13 +50,11 @@
 
         },
         created() {
-            // this.hasLogin = true;
-            // console.log(this.$store.getters.getUser.username);
-            // if(!this.$store.getters.getUser.username) {
-            //     this.user.username = this.$store.getters.getUser.username;
-            //     this.user.avatar = this.$store.getters.getUser.avatar;
-            //     this.hasLogin = true;
-            // }
+            if(this.$store.getters.getUser.username) {
+                this.user.username = this.$store.getters.getUser.username
+                this.user.avatar = this.$store.getters.getUser.avatar;
+                this.hasLogin = true;
+            }
         }
     }
 </script>
